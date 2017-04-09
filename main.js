@@ -34,3 +34,28 @@ $('#startbutton').click(function(){
 	showConfirm(onclick);
 	return false;
 });
+
+var keys = {
+	left: false,
+	right: false,
+	up: false,
+	down: false
+};
+
+// Keydown listener
+document.body.addEventListener('keydown', function(e) {
+	e = e.keyCode;
+	if (e === 37) keys.left  = true;
+	if (e === 39) keys.right = true;
+	if (e === 38) keys.up    = true;
+	if (e === 40) keys.down  = true;
+});
+
+// Keyup listener
+document.body.addEventListener('keyup', function(e) {
+	e = e.keyCode;
+	if (e === 37) keys.left  = false;
+	if (e === 39) keys.right = false;
+	if (e === 38) keys.up    = false;
+	if (e === 40) keys.down  = false;
+});
