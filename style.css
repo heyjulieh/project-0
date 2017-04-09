@@ -135,6 +135,10 @@ img {
   left: 5px;
   vertical-align: middle;
 }
+
+.hidden{
+  display: none;
+}
 footer {
   clear: both;
   font-family: 'Bungee Hairline';

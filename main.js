@@ -1,6 +1,6 @@
 console.log("insanity check")
 
-// Set up board
+// Countdown
 i = 40;
 function onTimer() {
   document.getElementById('mycounter').innerHTML = "countdown: " + i;
@@ -22,21 +22,21 @@ function randomImages (){
   $('.box').each(function () {
       var rand = Math.floor(Math.random() * 7);
       console.log(rand);
-      $(this).append('<img src="' + images[rand] + '"/>');
+      $(this).append('<img class="hidden" src="' + images[rand] + '"/>');
   });
 
-  // Button functions
 }
-
+// Button functions
+$( document ).ready(function() {
 $("#restartbutton").on('click',function(){
     $(".box").append('');
     $(".box").removeClass('ghostcaught');
-    $("#mycounter").innerHTML = 60;
+    $("#mycounter").innerHTML = 30;
+    $(".ghost-tracker").innerHTML = 0;
 });
 
 $('#startbutton').click(function(){
 	$(this).attr('onclick','');
-	showConfirm(onclick);
 	return false;
 });
 
@@ -68,7 +68,11 @@ document.body.addEventListener('keyup', function(e) {
 
 // Start game play
 // Set flashlight sprite at b21 and beam at b16 on document load
+var flashlightStart = $('#b21').append('<img src="ghost_png/flashlight_up.png"/>');
+var beamStart = $('#b16').append('<img src="ghost_png/beam_up.png"/>');
 // Set visibility of ghosts to hidden
+
+});
 // Move flashlight and beam up or right using keys
 // Change flashlight and beam image depending on key
 // i.e. if move up, flashlight image = up, beam image = up, original cell where flashlight was = blank
