@@ -1,3 +1,4 @@
+console.log("insanity check")
 i = 60;
 function onTimer() {
   document.getElementById('mycounter').innerHTML = i;
@@ -9,27 +10,9 @@ function onTimer() {
     setTimeout(onTimer, 1000);
   }
 }
-
-var imagesArray = ["http://orig10.deviantart.net/d64b/f/2016/136/9/8/pixel_art__cute_ghost_by_slhqueenbee-da2dhir.png", "http://data.whicdn.com/images/170513401/superthumb.gif"];
-
-
-//create a function named displayImage
-//it should not have any values passed into it
-
-var random1, random2;
-
-
-//sets array variables to random numbers
-function createLottoValues() {
-  for (var i=0; i<imagesArray.length; i++) {
-      imagesArray[i] = Math.floor(Math.random()*25 + 1);
-  }
-}
-
-function updateTable() {
-  createLottoValues();
-  for (var i=0; i<imageArray.length; i++) {
-    tmp = 'box'+(i+1);
-    document.getElementById(tmp).innerHTML = imagesArray[i];
-  }
-}
+  var images = ["ghost_png/001-halloween.png", "ghost_png/002-ghost-2.png", "ghost_png/003-ghost-1.png", "ghost_png/004-ghost.png", "ghost_png/005-game-ghost.png"];
+  $('.box').each(function () {
+      var rand = Math.floor(Math.random() * 5);
+      $(this).append('<img src="' + images[rand] + '"/>');
+      return;
+  });
