@@ -28,12 +28,6 @@ function randomImages (){
 }
 // Button functions
 $( document ).ready(function() {
-$("#restartbutton").on('click',function(){
-    $(".box").append('');
-    $(".box").removeClass('ghostcaught');
-    $("#mycounter").innerHTML = 30;
-    $(".ghost-tracker").innerHTML = 0;
-});
 
 $('#startbutton').click(function(){
 	$(this).attr('onclick','');
