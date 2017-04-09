@@ -1,4 +1,5 @@
 console.log("insanity check")
+
 i = 60;
 function onTimer() {
   document.getElementById('mycounter').innerHTML = i;
@@ -11,10 +12,25 @@ function onTimer() {
   }
 }
 function randomImages (){
-  var images = ["ghost_png/001-halloween.png", "ghost_png/002-ghost-2.png", "ghost_png/003-ghost-1.png", "ghost_png/004-ghost.png", "ghost_png/005-game-ghost.png"];
+  var images = [
+    "ghost_png/003-ghost.png",
+    "ghost_png/004-ghost.png",
+    "", "", "", "", ""];
   $('.box').each(function () {
-      var rand = Math.floor(Math.random() * 5);
+      var rand = Math.floor(Math.random() * 7);
+      console.log(rand);
       $(this).append('<img src="' + images[rand] + '"/>');
-      return;
   });
 }
+
+$("#restartbutton").on('click',function(){
+    $(".box").append('');
+    $(".box").removeClass('ghostcaught');
+    $("#mycounter").innerHTML = 60;
+});
+
+$('#startbutton').click(function(){
+	$(this).attr('onclick','');
+	showConfirm(onclick);
+	return false;
+});

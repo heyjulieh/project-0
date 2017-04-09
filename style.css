@@ -83,20 +83,32 @@ button:hover {
 
 .box {
   text-align: center;
-  border: 1px solid lightgrey;
+  /*border: 1px solid lightgrey;*/
 	height: 50px;
   width: 50px;
   padding: 10px;
 	display: inline-block;
 	margin: -2px;
-	vertical-align: top;
+	vertical-align: center;
+  overflow: auto;
 }
-
+.boxPlayer {
+  text-align: center;
+  /*border: 1px solid lightgrey;*/
+	height: 50px;
+  width: 50px;
+  padding: 10px;
+	display: inline-block;
+	margin: -2px;
+	vertical-align: center;
+  overflow: auto;
+}
 footer {
   clear: both;
   font-family: 'Bungee Hairline';
   color: lightyellow;
   font-size: 10px;
+  padding: 10px;
 }
 
 #footerlink {
