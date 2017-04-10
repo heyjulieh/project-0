@@ -34,8 +34,8 @@ $('#startbutton').click(function(){
 });
 // Start game play
 // Set flashlight sprite at b21 and beam at b16 on document load
-var flashlightStart = $('#b21').append('<img src="ghost_png/flashlight_up.png"/>');
-var beamStart = $('#b16').append('<img src="ghost_png/beam_up.png"/>');
+var flashlightStart = $('#b21').append('<img id="flashlight" src="ghost_png/flashlight_up.png"/>');
+var beamStart = $('#b16').append('<img id="beam" src="ghost_png/beam_up.png"/>');
 var containGhost = ['<img class="hidden" src="ghost_png/ghost_png/003-ghost.png"/>', '<img class="hidden" src="ghost_png/ghost_png/004-ghost.png"/>'];
 // Move flashlight and beam up or right using keys
 // Change flashlight and beam image depending on key
@@ -47,11 +47,114 @@ var board = {
   row4: [$('#b16'),$('#b17'),$('#b18'),$('#b19'),$('#b20')],
   row5: [$('#b21'),$('#b22'),$('#b23'),$('#b24'),$('#b25')]
 }
-// if the beam enters any cell with images of ghost, i.e. contains .hidden, ghost image appears and then disappears from cell once score counted, and the ghost-tracker counter adds +1 (to ghost-tracker div); else, the flashlight and the beam moves forward
-// Keydown listener
+
+// Get position and image src of flashlight and beam
+var currFlashlightImg = $('#flashlight').attr('src');
+var currBeamImg = $('#beam').attr('src');
+var currFlashlightPos = $('#flashlight').attr('id');
+var currBeamPos = $('#beam').attr('id');
+var flashlightLeft = $('#'+currFlashlightPos).append('<img id="flashlight" src="ghost_png/flashlight_left.png"/>');
+var beamLeft = $('#'+currBeamPos).append('<img id="beam" src="ghost_png/beam_left.png"/>');
+var nextLeftFPos = function(){
+  for (var i=0; i<currFlashlightPos.length; i--);
+    row1[i]--;
+    row2[i]--;
+    row3[i]--;
+    row4[i]--;
+    row5[i]--;
+  };
+var nextLeftBeamPos = function(){
+  for (var i=0; i<currBeamPos.length; i--);
+    row1[i]--;
+    row2[i]--;
+    row3[i]--;
+    row4[i]--;
+    row5[i]--;
+  };
+  var flashlightRight = $('#'+currFlashlightPos).append('<img id="flashlight" src="ghost_png/flashlight_right.png"/>');
+  var beamRight = $('#'+currBeamPos).append('<img id="beam" src="ghost_png/beam_right.png"/>');
+  var nextRightFPos = function(){
+    for (var i=0; i<currFlashlightPos.length; i++){
+      row1[i]++;
+      row2[i]++;
+      row3[i]++;
+      row4[i]++;
+      row5[i]++;
+    }
+  };
+  var nextRightBeamPos = function(){
+    for (var i=0; i<currBeamPos.length; i++){
+      row1[i]++;
+      row2[i]++;
+      row3[i]++;
+      row4[i]++;
+      row5[i]++;
+    }
+  };
+// Begin playing
   function movePlayer (){
+    function left(){
+      if (row1[0] === 1 || row2[0] === 1 || row3[0] === 1 || row4[0] === 1 || row5[0] === 1){
+        return false;
+      }
+      if (currFlashlightImg === 'ghost_png/flashlight_up'){
+        return flashlightLeft;
+      }
+      if (currBeamImg === 'ghost_png/beam_up'){
+        return beamLeft;
+      }
+      if (currFLashlightImg === 'ghost_png/flashlight_down'){
+        return flashlightLeft;
+      }
+      if (currBeamImg === 'ghost_png/beam_down'){
+        return beamLeft;
+      }
+      if (currFlashlightImg === 'ghost_png/flashlight_right'){
+        return flashlightLeft;
+      }
+      if (currBeamImg === 'ghost_png/beam_right'){
+        return beamLeft;
+      }
+      if (currFlashlightImg === 'ghost_png/flashlight_left'){
+        $('#'+nextLeftFPos).append('<img id="beam" src="ghost_png/beam_left.png"/>');
+        return flashlightLeft;
+      }
+      if (currBeamImg === 'ghost_png/beam_left'){
+        $('#'+nextLeftBeamPos).append('<img id="beam" src="ghost_png/beam_left.png"/>');
+      }
+    }
+    function right(){
+      if (row1[4] === 1 || row2[4] === 1 || row3[4] === 1 || row4[4] === 1 || row5[4] === 1){
+        return false;
+      }
+      if (currFlashlightImg === 'ghost_png/flashlight_up'){
+        return flashlightRight;
+      }
+      if (currBeamImg === 'ghost_png/beam_up'){
+        return beamRight;
+      }
+      if (currFLashlightImg === 'ghost_png/flashlight_down'){
+        return flashlightRight;
+      }
+      if (currBeamImg === 'ghost_png/beam_down'){
+        return beamRight;
+      }
+      if (currFlashlightImg === 'ghost_png/flashlight_right'){
+        $('#'+nextRightFPos).append('<img id="beam" src="ghost_png/beam_right.png"/>');
+        return flashlightRight;
+      }
+      if (currBeamImg === 'ghost_png/beam_right'){
+        $('#'+nextRightBeamPos).append('<img id="beam" src="ghost_png/beam_right.png"/>')
+        return beamRight;
+      }
+      if (currFlashlightImg === 'ghost_png/flashlight_left'){
+        return flashlightRight;
+      }
+      if (currBeamImg === 'ghost_png/beam_left'){
+        return BeamRight;
+      }
+    }
   // LOGIC
-    // get position of flashlight and beam
     // for key up, false for values in row 1 = board[0]
     // for key left, false for values in row1[0], row2[0], row3[0], row4[0], row5[0]
     // for key right, false for values in row1[4], row2[4], row3[4], row4[4], row5[0]
@@ -76,7 +179,19 @@ var board = {
       // if key down, append image_up to new positions: board[y]++
       // if key right, append image_right to current positions
       // if key left, append image_left to current positions
-
+      // Keydown listener
+      document.addEventListener('keydown', function(event){
+          event = event || window.event;
+          var keycode = event.charCode || event.keyCode;
+          if(keycode == 37)
+              left();
+          if(keycode == 39)
+              right();
+          if(keycode == 38)
+              up();
+          if(keycode == 40)
+              down();
+      });
   }
 
   function checkGhost (){
