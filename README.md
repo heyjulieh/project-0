@@ -11,10 +11,10 @@ If you do not find all the ghosts within 30 seconds, you lose-- and you will be 
 
 However, if you happen to find all the ghosts in 30 seconds, you win-- and you will become a successful exorcist!
 
-### Issues/Bugs
+## Issues/Bugs
 Currently, the game does not work as the keydown associated with moving through the cells in the grid has errors.
 
 Win/lose logic has also not been created.
 
-### Link to the Game
+## Link to the Game
 The link to the game is: https://heyjulieh.github.io/project-0/
