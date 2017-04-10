@@ -63,7 +63,7 @@ button:hover {
   padding-left: 10px;
   margin-bottom: 30px;
   margin-top: 30px;
-  color: #ffdd09;
+  color: #fffe8b;
   font-size: 15px;
 }
 .ghost-tracker {
@@ -135,9 +135,13 @@ img {
   left: 5px;
   vertical-align: middle;
 }
-
-.hidden{
+.hidden {
   display: none;
+}
+p {
+  display: inline-block;
+  padding-right: 5px;
+  color: #ffdd09;
 }
 footer {
   clear: both;
