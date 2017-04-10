@@ -130,7 +130,7 @@ button:hover {
   overflow: auto;
 }
 img {
-  position:absolute;
+  position: absolute;
   bottom:0;
   left: 5px;
   vertical-align: middle;
