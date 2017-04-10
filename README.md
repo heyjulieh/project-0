@@ -1,4 +1,5 @@
-##Ghost Hunter README
+#Ghost Hunter README
+
 ##Description
 
 This a game that is based on Nintendo's Luigi's Mansion (but slightly more morbid) in which the goal of the game is to find all the ghosts within a given timeframe (30 seconds).
@@ -10,8 +11,8 @@ If you do not find all the ghosts within 30 seconds, you lose.
 
 However, if you happen to find all the ghosts in 30 seconds, you win!
 
-##Issues/Bugs
+###Issues/Bugs
 Currently, the game does not work as the keydown associated with moving through the cells in the grid has errors.
 
-##Link to the Game
+###Link to the Game
 The link to the game is: 
