@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///Users/jlie_hng/wdi/project-0/index.html -->
+<html><!-- style sheet here --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="./ghost hunter_files/style.css">
+<!-- materialize link here -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css"> -->
+<!-- jquery here -->
+<script src="./ghost hunter_files/jquery-3.2.1.min.js"></script>
+<!-- javascript link here -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script> -->
+<script src="./ghost hunter_files/main.js"></script>
+<!-- fonts -->
+<style>
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Anton|Bungee+Hairline|Gloria+Hallelujah');
+</style>
+
+  
+    
+    <title>ghost hunter</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>ghost hunter</h1>
+    </header>
+    <nav>
+      <div id="clockdiv"></div>
+        <div class="nav-container">
+            <!-- restart button here -->
+            <button type="button" id="restartbutton" onclick="window.location.href=window.location.href">restart</button>
+            <!-- timer here -->
+            <button type="button" id="startbutton" onclick="">start</button>
+            <p>ghosts found: </p><div class="ghost-tracker">0</div>
+            <br>
+            <div id="mycounter">countdown: 35</div>
+          </div>
+    </nav>
+
+    <main>
+      <!-- create grid -->
+      <div class="container">
+        <div class="row center-align">
+          <div class="col s12 m12 l12">
+      <div class="col m6 offset-m3" id="board">
+
+      <div class="row">
+          <div class="box" id="b1"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+          <div class="box" id="b2"><img class="hidden" src="./ghost hunter_files/004-ghost.png"></div>
+          <div class="box" id="b3"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+          <div class="box" id="b4"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+          <div class="box" id="b5"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+      </div>
+        <div class="row">
+          <div class="box" id="b6"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+          <div class="box" id="b7"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+          <div class="box" id="b8"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+          <div class="box" id="b9"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+          <div class="box" id="b10"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+      </div>
+        <div class="row">
+          <div class="box" id="b11"><img class="hidden" src="./ghost hunter_files/004-ghost.png"></div>
+          <div class="box" id="b12"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+          <div class="box" id="b13"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+          <div class="box" id="b14"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+          <div class="box" id="b15"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+      </div>
+        <div class="row">
+          <div class="boxPlayer" id="b16"><img id="beam" src="./ghost hunter_files/beam_up.png"><img id="beam" src="./ghost hunter_files/beam_left.png"><img id="beam" src="./ghost hunter_files/beam_right.png"><img id="beam" src="./ghost hunter_files/beam_up.png"><img id="beam" src="./ghost hunter_files/beam_down.png"></img></div>
+          <div class="box" id="b17"><img class="hidden" src="./ghost hunter_files/003-ghost.png"></div>
+          <div class="box" id="b18"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+          <div class="box" id="b19"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+          <div class="box" id="b20"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+      </div>
+        <div class="row">
+          <div class="boxPlayer" id="b21"><img id="flashlight" src="./ghost hunter_files/flashlight_up.png"><img id="flashlight" src="./ghost hunter_files/flashlight_left.png"><img id="flashlight" src="./ghost hunter_files/flashlight_right.png"><img id="flashlight" src="./ghost hunter_files/flashlight_up.png"><img id="flashlight" src="./ghost hunter_files/flashlight_down.png"></img></div>
+          <div class="boxPlayer" id="b22"></div>
+          <div class="box" id="b23"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+          <div class="box" id="b24"><img class="hidden" src="./ghost hunter_files/003-ghost.png"></div>
+          <div class="box" id="b25"><img class="hidden" src="file:///Users/jlie_hng/wdi/project-0/index.html"></div>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer>
+      <p>created for your enjoyment by a ga student: <a id="footerlink" href="https://www.linkedin.com/in/jliehng/">julie huang</a></p>
+      <p>email me <a id="footerlink" href="mailto:heyjulieh@gmail.com?Subject=Cool%20game">here</a></p>
+    </footer>
+
+  
+
+
+
+</body></html>
