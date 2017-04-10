@@ -25,7 +25,7 @@ function randomImages (){
       $(this).append('<img class="hidden" src="' + images[rand] + '"/>');
   });
 
-}
+
 $( document ).ready(function() {
 // Disable start button after first click
 $('#startbutton').click(function(){
@@ -119,7 +119,7 @@ var nextLeftBeamPos = function(){
   }
 
 // Begin playing
-  function movePlayer (){
+  // function movePlayer (){
     function left(){
       if (row1[0] === 1 || row2[0] === 1 || row3[0] === 1 || row4[0] === 1 || row5[0] === 1){
         return false;
@@ -244,22 +244,31 @@ var nextLeftBeamPos = function(){
         return beamDown;
       }
     }
-      document.addEventListener('keydown', function(event){
-        event = event || window.event;
-          var keycode = event.charCode || event.keyCode;
-          if(keycode == 37)
-            left();
-            event.preventDefault();
-          if(keycode == 39)
-            right();
-            event.preventDefault();
-          if(keycode == 38)
-            up();
-            event.preventDefault();
-          if(keycode == 40)
-            down();
-            event.preventDefault();
-      });
+    document.addEventListener('keydown', function(event){
+      // event = event || window.event;
+        // var keycode = event.charCode || event.keyCode;
+        if(event.keyCode == 37){
+          left();
+          event.preventDefault();
+          console.log(event.keyCode);
+        }
+        if(event.keyCode == 39){
+          right();
+          event.preventDefault();
+          console.log(event.keyCode);
+        }
+        if(event.keyCode == 38){
+          up();
+          console.log(event.keyCode);
+          event.preventDefault();
+          console.log(event.keyCode);
+        }
+        if(event.keyCode == 40){
+          down();
+          event.preventDefault();
+          console.log(event.keyCode);
+        }
+    });
   // GAME LOGIC
     // for key up, false for values in row 1 = board[0]
     // for key left, false for values in row1[0], row2[0], row3[0], row4[0], row5[0]
@@ -287,7 +296,7 @@ var nextLeftBeamPos = function(){
       // if key left, append image_left to current positions
       // Keydown listener
 
-  }
+  // }
 
   function checkGhost (){
     // if beam in the same cell as ghost, remove beam image and show hidden class image
