@@ -88,7 +88,7 @@ button:hover {
   bottom: 0;
 }
 .container {
-  border: 2px solid darkgrey;
+  border: 1px solid darkgrey;
   padding: 30px;
   text-align: center;
   height: 400px;
@@ -105,7 +105,7 @@ button:hover {
   display: block;
 }
 .box {
-  border: 1px solid lightgrey;
+  /*border: 1px solid lightgrey;*/
 	height: 50px;
   width: 50px;
   padding: 10px;
@@ -118,7 +118,7 @@ button:hover {
 }
 .boxPlayer {
   text-align: center;
-  border: 1px solid lightgrey;
+  /*border: 1px solid lightgrey;*/
 	height: 50px;
   width: 50px;
   padding: 10px;
