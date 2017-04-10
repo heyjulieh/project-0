@@ -1,4 +1,4 @@
-# Ghost Hunter README
+# Ghost Hunter Game README
 
 ## Description
 
